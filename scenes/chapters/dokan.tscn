@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dxyla4n6tkgxp"]
+
+[ext_resource type="Script" uid="uid://coh8k7k863drw" path="res://scripts/dokan.gd" id="1_aravs"]
+[ext_resource type="Texture2D" uid="uid://cqjq8p02iqlb3" path="res://assets/bg/bg_dokan.webp" id="1_j4gbn"]
+[ext_resource type="Script" uid="uid://walvvnxrito3" path="res://scripts/hotspot.gd" id="3_w20ei"]
+[ext_resource type="PackedScene" uid="uid://ce6o0xi3365la" path="res://scenes/ui/dialogue_box.tscn" id="4_j1wp4"]
+
+[node name="Dokan" type="Node2D" unique_id=1922592560]
+script = ExtResource("1_aravs")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2066336178]
+scale = Vector2(1.54, 1.54)
+texture = ExtResource("1_j4gbn")
+centered = false
+
+[node name="AviSpot" type="Area2D" parent="." unique_id=1191805507]
+position = Vector2(1250, 640)
+script = ExtResource("3_w20ei")
+hotspot_name = "avi"
+shape_size = Vector2(260, 300)
+
+[node name="BatterySpot" type="Area2D" parent="." unique_id=49954669]
+position = Vector2(1110, 830)
+script = ExtResource("3_w20ei")
+hotspot_name = "battery"
+shape_size = Vector2(200, 160)
+
+[node name="BoardSpot" type="Area2D" parent="." unique_id=342504544]
+position = Vector2(1480, 640)
+script = ExtResource("3_w20ei")
+hotspot_name = "board"
+shape_size = Vector2(180, 350)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1727890167]
+
+[node name="DialogueBox" parent="UI" unique_id=28676136 instance=ExtResource("4_j1wp4")]
